@@ -8,12 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var msgString = "You are Great!"
+    @State private var flipflop = true
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Image(systemName: "swift")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+                .foregroundStyle(.orange)
+            Text(msgString)
+            
+            Button("Press Me") {
+                
+                if flipflop {
+                    msgString = "You are Happy"
+                }
+                else {
+                    msgString = "You are Great!"
+                }
+                flipflop.toggle()
+            }
+            
+
+            
         }
         .padding()
     }
